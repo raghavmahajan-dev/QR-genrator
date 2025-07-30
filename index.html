@@ -31,5 +31,33 @@
     </div>
 
     <script src="script.js"></script>
+    <footer
+      id="footer"
+      style="
+        position: fixed;
+        bottom: 10px;
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        color: grey;
+        opacity: 0.7;
+        z-index: 5;
+      "
+    >
+      &copy; Raghav Mahajan
+    </footer>
+
+    <script>
+      const footer = document.getElementById("footer");
+      const isDark = localStorage.getItem("theme") === "dark";
+      if (isDark) footer.style.color = "#aaa";
+
+      // Optional: Update color on theme toggle
+      themeBtn.addEventListener("click", () => {
+        footer.style.color = document.documentElement.classList.contains("dark")
+          ? "#aaa"
+          : "grey";
+      });
+    </script>
   </body>
 </html>
