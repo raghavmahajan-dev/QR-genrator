@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Top Navbar -->
+    <nav class="navbar">
+      <div class="nav-title">QR Code Generator</div>
+      <button id="theme-btn">🌙 Dark Mode</button>
+    </nav>
+
+    <!-- Main QR Generator Container -->
+    <div id="qr-cont">
+      <h2>Generate Your QR Code</h2>
+      <input
+        type="text"
+        id="qr-input"
+        placeholder="Paste your URL or text here..."
+      />
+      <button id="qr-button">Generate QR Code</button>
+
+      <img src="" alt="QR Code" id="qr-img" style="display: none" />
+      <div id="spinner" class="spinner" style="display: none"></div>
+      <a id="download-btn" href="#" download="qr-code.png" style="display: none"
+        >⬇️ Download QR Code</a
+      >
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
