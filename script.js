@@ -61,3 +61,25 @@ themeBtn.addEventListener("click", () => {
     localStorage.setItem("theme", "light");
   }
 });
+
+// Download QR image reliably using blob
+downloadBtn.addEventListener("click", async (e) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch(qrImg.src);
+    const blob = await response.blob();
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "qr-code.png";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  } catch (error) {
+    alert("Failed to download QR code.");
+    console.error("Download error:", error);
+  }
+});
